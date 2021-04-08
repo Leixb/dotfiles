@@ -1,0 +1,17 @@
+# vim:ft=bash:
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+#!/bin/sh
+# install yay
+    pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+
+    yay -S --needed fish fisher ripgrep exa bat neovim-git starship picom kitty otf-nerd-fonts-fira-code firefox rustup go asdf
+
+    fisher add patrickf1/colored_man_pages.fish
+    fisher add PatrickF1/fzf.fish
+    fisher add jorgebucaran/autopair.fish
+{{ else - }}
+    echo "Not arch"
+{{ end -}}

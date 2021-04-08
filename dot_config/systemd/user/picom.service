@@ -1,0 +1,9 @@
+[Unit]
+Description=picom compositor for X11
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/picom
+
+[Install]
+WantedBy=xsession.target

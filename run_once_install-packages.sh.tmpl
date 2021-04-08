@@ -7,11 +7,8 @@
     cd yay
     makepkg -si
 
-    yay -S --needed fish fisher ripgrep exa bat neovim-git starship picom kitty otf-nerd-fonts-fira-code firefox rustup go asdf
+    yay -S --needed fish ripgrep exa bat neovim-git starship picom kitty otf-nerd-fonts-fira-code firefox rustup go asdf
 
-    fisher add patrickf1/colored_man_pages.fish
-    fisher add PatrickF1/fzf.fish
-    fisher add jorgebucaran/autopair.fish
 {{ else - }}
     echo "Not arch"
 {{ end -}}

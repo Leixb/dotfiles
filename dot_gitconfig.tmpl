@@ -1,0 +1,36 @@
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+	email = {{ .email }}
+	name = Leixb
+	signingkey = 63D3F436EDE87E1F129224AFFC035BB2BB28E15D
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[core]
+	excludesfile = ~/.gitignore
+	symlinks = true
+    pager = delta
+	editor = nvim
+[diff "pdf"]
+    textconv = pdfinfo
+[diff "zip"]
+    textconv = unzip -v
+[diff]
+	tool = nvimdiff2
+    colorMoved = default
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = master
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

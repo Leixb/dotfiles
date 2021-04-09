@@ -1,6 +1,6 @@
 # dotfiles
 
-This dotfiles are managed with ![chezmoi](chezmoi.io). To apply them install
+This dotfiles are managed with [chezmoi](https://www.chezmoi.io). To apply them install
 `chezmoi`:
 
 ```shell

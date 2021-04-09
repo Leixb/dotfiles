@@ -1,0 +1,9 @@
+[Unit]
+Description=xautolock
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xautolock -locker lock -time 10
+
+[Install]
+WantedBy=xsession.target

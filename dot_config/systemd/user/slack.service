@@ -1,0 +1,9 @@
+[Unit]
+Description=Slack Desktop Client
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/slack -u
+
+[Install]
+WantedBy=xsession.target

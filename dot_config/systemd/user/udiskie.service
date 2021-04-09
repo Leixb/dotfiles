@@ -1,0 +1,9 @@
+[Unit]
+Description=udiskie tray
+
+[Service]
+Type=simple
+ExecStart=udiskie --smart-tray --notify --automount --terminal "kitty -e" --file-manager pcmanfm
+
+[Install]
+WantedBy=xsession.target

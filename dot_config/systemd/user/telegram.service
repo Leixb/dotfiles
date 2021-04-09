@@ -1,0 +1,10 @@
+[Unit]
+Description = Telegram Desktop Client
+
+[Service]
+Environment=DESKTOP_APP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=true
+Type=simple
+ExecStart = /usr/bin/telegram-desktop -startintray
+
+[Install]
+WantedBy=xsession.target

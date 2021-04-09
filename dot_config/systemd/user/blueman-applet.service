@@ -1,0 +1,9 @@
+[Unit]
+Description=blueman applet
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/blueman-applet
+
+[Install]
+WantedBy=xsession.target

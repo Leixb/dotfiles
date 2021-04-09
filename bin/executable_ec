@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# sudo modprobe -r ec_sys
+# sudo modprobe ec_sys write_support=1
+
+# posicio 0x0A -> 10
+
+sudo modprobe acpi_call
+
+method='\_SB.PCI0.LPCB.EC0.VPC0.SBMC'
+
+on() {
+    echo $method 3 | sudo tee /proc/acpi/call
+    # printf '\x10' | sudo dd of=/sys/kernel/debug/ec/ec0/io bs=1 seek=10 count=1 conv=notrunc
+}
+
+off() {
+    echo $method 5 | sudo tee /proc/acpi/call
+    # printf '\x00' | sudo dd of=/sys/kernel/debug/ec/ec0/io bs=1 seek=10 count=1 conv=notrunc
+}
+
+$1
+
+sudo modprobe -r acpi_call
